@@ -15,8 +15,9 @@
       Filter: <input type="text" ng-model='filterMessage'/>
     </div>
       <div class="messages-container">
-        <p ng-repeat="message in messages | filter: filterMessage">
-          {{message.message}} </p>
+        <p ng-repeat="message in messages | filter: filterMessage | orderBy: '-createdAt'">
+          {{message.message}} <span class="time">{{message.createdAt}}</span>
+        </p>
       </div>
     </div>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
